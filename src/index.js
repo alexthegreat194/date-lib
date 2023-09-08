@@ -8,69 +8,102 @@ class D {
 		this._date = new Date(...args)
 	}
 
-
-    // year, month, date, hour, mins, secs.
+    /**
+     * Year
+     * @returns {number} Full year
+     * @example 2021
+     */
     get year() {
         return this._date.getFullYear()
     }
 
+    /**
+     * Year
+     * @returns {number} Short year
+     * @example 21
+     */
     get yr() {
         return parseInt(this._date.getFullYear().toString().slice(-2))
     }
 
+    /**
+     * Month
+     * @returns {string} Full month
+     * @example January
+     */
     get month() {
         return fullMonths[this._date.getMonth()]
     }
 
+    /**
+     * Month
+     * @returns {string} Short month
+     * @example Jan
+     */
     get mon() {
         return shortMonths[this._date.getMonth()]
     }
 
+    /**
+     * Day
+     * @returns {string} Full day
+     * @example Tuesday
+     */
     get day() {
         return fullDays[this._date.getDay()]
     }
 
+    /**
+     * Day
+     * @returns {string} Short day
+     * @example Tue
+     */
     get dy() {
         return shortDays[this._date.getDay()]
     }
 
+    /**
+     * Date
+     * @returns {number} Date
+     * @example 27
+     */
     get date() {
         return this._date.getDate()
     }
 
+    /**
+     * Hours
+     * @returns {number} Hours
+     * @example 18
+     */
     get hours() {
         return this._date.getHours()
     }
 
+    /**
+     * Minutes
+     * @returns {number} Minutes
+     * @example 6
+     */
     get mins() {
         return this._date.getMinutes()
     }
 
+    /**
+     * Seconds
+     * @returns {number} Seconds
+     * @example 5
+     */
     get secs() {
         return this._date.getSeconds()
     }
 
     /**
-     * You need a format method that takes a "mask" string. The mask will contain formatting characters which displays various date elements, other characters are displayed unchanged.
-
-        The built in Date object has some limited formatting options. You're library will offer a more flexible solution.
-
-        List of formatting characters:
-
-        'Y' -> 2019 (Year full)
-        'y' -> 19 (Year short)
-        'M' -> July (Month full)
-        'm' -> Jul (Month short)
-        'D' -> 01 (date padded)
-        'd' -> 1 (date)
-        '#' -> 1st (date with ordinal suffix: st, nd, rd or th)
-        'H' -> 05 (Hours padded)
-        'h' -> 5 (Hours)
-        'I' -> 08 (Minutes padded)
-        'i' -> 8 (Minutes)
-        'S' -> 04 (Seconds padded)
-        's' -> 4 (Seconds)
-        The format() method should provide an acceptable default formatted date with no parameters.
+     * Format
+     * @param {string} mask - Format mask
+     * @example Y M D
+     * @returns {string} Formatted date
+     * @example 2017 January 02
      */
     format(mask = 'Y M D') {
         const date = this._date
