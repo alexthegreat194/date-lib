@@ -147,23 +147,4 @@ class D {
     }
 }
 
-const d = new D(2017, 0, 2, 3, 4, 5)
-console.log( d.year )  // 2021 - Full year
-console.log( d.yr )    // 21   - Short year
-console.log( d.month ) // July - Full month
-console.log( d.mon )   // Jul  - Short month
-console.log( d.day )   // Tuesday - Full day
-console.log( d.dy )    // Tue  - Short day
-console.log( d.date )  // 27   - Date
-console.log( d.hours ) // 18   - Hour
-console.log( d.mins )  // 6    - Minutes
-console.log( d.secs )  // 5    - Seconds
-
-// Make a date with values for Y, M, D etc.
-console.log(d.format())              // 2017 January 02
-console.log(d.format('y/m/d'))       // 17/Jan/2
-console.log(d.format('H:I:S'))       // 03:04:05
-console.log(d.format('h:i:s'))       // 3:4:5
-console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
-
 module.exports = D
