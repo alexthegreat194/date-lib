@@ -15,7 +15,7 @@ class D {
     }
 
     get yr() {
-        return
+        return parseInt(this._date.getFullYear().toString().slice(-2))
     }
 
     get month() {
@@ -132,3 +132,5 @@ console.log(d.format('y/m/d'))       // 17/Jan/2
 console.log(d.format('H:I:S'))       // 03:04:05
 console.log(d.format('h:i:s'))       // 3:4:5
 console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
+
+module.exports = D
